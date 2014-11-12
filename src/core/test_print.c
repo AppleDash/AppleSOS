@@ -3,8 +3,11 @@
 void putchar(unsigned c)
 {
 	int res;
-	//asm ("syscall" : "=a" (res) : "a"(1), "D"(1), "S"(&c), "d"(1));
+#ifdef i386
 	asm ("int $0x80" : "=a" (res) : "a"(4), "b"(1), "c"(&c), "d"(1));
+#else
+	asm ("syscall" : "=a" (res) : "a"(1), "D"(1), "S"(&c), "d"(1));
+#endif
 	return;
 }
 
