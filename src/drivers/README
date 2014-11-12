@@ -1,0 +1,14 @@
+Place drivers in here eventually.
+
+Some directories to maybe make:
+
+- pci (PCI host controllers)
+- usb (Actual USB controllers, not like keyboard/mouse)
+- input (Keyboard, mouse, touchscreen, etc)
+- comm (if you want a more 'unified' communication subsystem/layer/etc)
+    - comm/eth
+    - comm/modem
+    - comm/fc (FibreChannel)
+    - etc..
+- arch (Architecture-specific devices; OpenFirmware console on ppc/sparc, EFI on x86/Itanium)
+
